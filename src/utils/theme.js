@@ -15,6 +15,38 @@ export const getThemeColors = (theme) => {
     };
   }
 
+  if (theme === 'forest') {
+    return {
+      bg: 'bg-forest-light',
+      bgPrimary: 'bg-forest-dark',
+      bgSecondary: 'bg-forest-light',
+      textPrimary: 'text-forest-darkest',
+      textSecondary: 'text-forest-dark',
+      textOnPrimary: 'text-forest-light',
+      textOnSecondary: 'text-forest-darkest',
+      border: 'border-forest-darkest',
+      borderPrimary: 'border-forest-darkest',
+      progressBg: 'bg-forest-medium',
+      progressFill: 'bg-forest-darkest',
+    };
+  }
+
+  if (theme === 'midnight') {
+    return {
+      bg: 'bg-midnight-medium',
+      bgPrimary: 'bg-midnight-dark',
+      bgSecondary: 'bg-midnight-medium',
+      textPrimary: 'text-midnight-gold',
+      textSecondary: 'text-midnight-gold',
+      textOnPrimary: 'text-midnight-gold',
+      textOnSecondary: 'text-midnight-gold',
+      border: 'border-midnight-gold',
+      borderPrimary: 'border-midnight-gold',
+      progressBg: 'bg-midnight-dark',
+      progressFill: 'bg-midnight-gold',
+    };
+  }
+
   // Coffee theme (default)
   return {
     bg: 'bg-coffee-light',

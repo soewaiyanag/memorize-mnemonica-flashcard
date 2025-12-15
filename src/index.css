@@ -12,6 +12,18 @@
   --color-sea-medium: #1A3D64;
   --color-sea-accent: #1D546C;
   --color-sea-light: #F4F4F4;
+
+  /* Forest Theme */
+  --color-forest-darkest: #040D12;
+  --color-forest-dark: #183D3D;
+  --color-forest-medium: #5C8374;
+  --color-forest-light: #93B1A6;
+
+  /* Midnight Theme */
+  --color-midnight-darkest: #041C32;
+  --color-midnight-dark: #04293A;
+  --color-midnight-medium: #064663;
+  --color-midnight-gold: #ECB365;
 }
 
 /* Custom 3D flip effect styles */

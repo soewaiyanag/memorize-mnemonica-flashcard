@@ -138,6 +138,24 @@ function App() {
                 style={{ backgroundColor: '#0C2B4E', borderColor: '#0C2B4E' }}
                 title="Sea Theme"
               />
+              <button
+                onClick={() => setTheme('forest')}
+                className={cn(
+                  "w-8 h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'forest' ? 'ring-2 ring-offset-2' : ''
+                )}
+                style={{ backgroundColor: '#183D3D', borderColor: '#183D3D' }}
+                title="Forest Theme"
+              />
+              <button
+                onClick={() => setTheme('midnight')}
+                className={cn(
+                  "w-8 h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'midnight' ? 'ring-2 ring-offset-2' : ''
+                )}
+                style={{ backgroundColor: '#04293A', borderColor: '#04293A' }}
+                title="Midnight Theme"
+              />
             </div>
           </div>
           <h1 className={cn("text-5xl font-bold mb-2", colors.textPrimary)}>

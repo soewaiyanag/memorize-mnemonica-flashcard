@@ -5,12 +5,12 @@ const Navigation = ({ onPrev, onNext, canGoPrev, canGoNext, theme }) => {
   const colors = getThemeColors(theme);
 
   return (
-    <div className="flex gap-4 justify-center items-center">
+    <div className="flex gap-2 sm:gap-4 justify-center items-center">
       <button
         onClick={onPrev}
         disabled={!canGoPrev}
         className={cn(
-          "flex-1 px-6 py-4 rounded-lg font-semibold border-2",
+          "flex-1 px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-xs sm:text-base font-semibold border-2",
           colors.bgSecondary,
           colors.textOnSecondary,
           colors.borderPrimary,
@@ -24,7 +24,7 @@ const Navigation = ({ onPrev, onNext, canGoPrev, canGoNext, theme }) => {
         onClick={onNext}
         disabled={!canGoNext}
         className={cn(
-          "flex-1 px-6 py-4 rounded-lg font-semibold border-2",
+          "flex-1 px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-xs sm:text-base font-semibold border-2",
           colors.bgSecondary,
           colors.textOnSecondary,
           colors.borderPrimary,

@@ -12,19 +12,19 @@ const Controls = ({ selectedGroups, onGroupToggle, mode, onModeChange, theme }) 
   ];
 
   return (
-    <div className={cn("rounded-lg p-6 border-2", colors.bgSecondary, colors.borderPrimary)}>
+    <div className={cn("rounded-lg p-3 sm:p-6 border-2", colors.bgSecondary, colors.borderPrimary)}>
       {/* Group Selector */}
-      <div className="mb-6">
-        <h3 className={cn("text-sm font-semibold mb-3 uppercase tracking-wide", colors.textSecondary)}>
+      <div className="mb-4 sm:mb-6">
+        <h3 className={cn("text-xs sm:text-sm font-semibold mb-2 sm:mb-3 uppercase tracking-wide", colors.textSecondary)}>
           Select Groups
         </h3>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3">
           {groups.map((group) => (
             <button
               key={group.id}
               onClick={() => onGroupToggle(group.id)}
               className={cn(
-                "px-4 py-3 rounded-lg font-semibold border-2 cursor-pointer",
+                "px-2 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-base font-semibold border-2 cursor-pointer",
                 colors.borderPrimary,
                 selectedGroups.includes(group.id)
                   ? cn(colors.bgPrimary, colors.textOnPrimary)
@@ -39,14 +39,14 @@ const Controls = ({ selectedGroups, onGroupToggle, mode, onModeChange, theme }) 
 
       {/* Mode Selector */}
       <div>
-        <h3 className={cn("text-sm font-semibold mb-3 uppercase tracking-wide", colors.textSecondary)}>
+        <h3 className={cn("text-xs sm:text-sm font-semibold mb-2 sm:mb-3 uppercase tracking-wide", colors.textSecondary)}>
           Practice Mode
         </h3>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3">
           <button
             onClick={() => onModeChange('number')}
             className={cn(
-              "px-4 py-3 rounded-lg font-semibold border-2 cursor-pointer",
+              "px-2 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-base font-semibold border-2 cursor-pointer",
               colors.borderPrimary,
               mode === 'number'
                 ? cn(colors.bgPrimary, colors.textOnPrimary)
@@ -58,7 +58,7 @@ const Controls = ({ selectedGroups, onGroupToggle, mode, onModeChange, theme }) 
           <button
             onClick={() => onModeChange('card')}
             className={cn(
-              "px-4 py-3 rounded-lg font-semibold border-2 cursor-pointer",
+              "px-2 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-base font-semibold border-2 cursor-pointer",
               colors.borderPrimary,
               mode === 'card'
                 ? cn(colors.bgPrimary, colors.textOnPrimary)

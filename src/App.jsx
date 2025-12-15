@@ -114,17 +114,17 @@ function App() {
   const currentCard = cards[currentIndex];
 
   return (
-    <div className={cn("min-h-screen py-8 px-4", colors.bg)}>
+    <div className={cn("min-h-screen py-4 sm:py-8 px-4", colors.bg)}>
       <div className="max-w-5xl mx-auto">
         {/* Header with Theme Selector */}
-        <div className="text-center mb-8">
-          <div className="flex justify-end mb-4">
-            <div className="flex gap-2">
+        <div className="text-center mb-4 sm:mb-8">
+          <div className="flex justify-end mb-2 sm:mb-4">
+            <div className="flex gap-1 sm:gap-2">
               <button
                 onClick={() => setTheme('coffee')}
                 className={cn(
-                  "w-8 h-8 rounded-full border-2 cursor-pointer",
-                  theme === 'coffee' ? 'ring-2 ring-offset-2' : ''
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'coffee' ? 'ring-1 sm:ring-2 ring-offset-1 sm:ring-offset-2' : ''
                 )}
                 style={{ backgroundColor: '#452829', borderColor: '#452829' }}
                 title="Coffee Theme"
@@ -132,8 +132,8 @@ function App() {
               <button
                 onClick={() => setTheme('sea')}
                 className={cn(
-                  "w-8 h-8 rounded-full border-2 cursor-pointer",
-                  theme === 'sea' ? 'ring-2 ring-offset-2' : ''
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'sea' ? 'ring-1 sm:ring-2 ring-offset-1 sm:ring-offset-2' : ''
                 )}
                 style={{ backgroundColor: '#0C2B4E', borderColor: '#0C2B4E' }}
                 title="Sea Theme"
@@ -141,8 +141,8 @@ function App() {
               <button
                 onClick={() => setTheme('forest')}
                 className={cn(
-                  "w-8 h-8 rounded-full border-2 cursor-pointer",
-                  theme === 'forest' ? 'ring-2 ring-offset-2' : ''
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'forest' ? 'ring-1 sm:ring-2 ring-offset-1 sm:ring-offset-2' : ''
                 )}
                 style={{ backgroundColor: '#183D3D', borderColor: '#183D3D' }}
                 title="Forest Theme"
@@ -150,24 +150,24 @@ function App() {
               <button
                 onClick={() => setTheme('midnight')}
                 className={cn(
-                  "w-8 h-8 rounded-full border-2 cursor-pointer",
-                  theme === 'midnight' ? 'ring-2 ring-offset-2' : ''
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer",
+                  theme === 'midnight' ? 'ring-1 sm:ring-2 ring-offset-1 sm:ring-offset-2' : ''
                 )}
                 style={{ backgroundColor: '#04293A', borderColor: '#04293A' }}
                 title="Midnight Theme"
               />
             </div>
           </div>
-          <h1 className={cn("text-5xl font-bold mb-2", colors.textPrimary)}>
+          <h1 className={cn("text-3xl sm:text-5xl font-bold mb-1 sm:mb-2", colors.textPrimary)}>
             MN3M0N1CA Stack
           </h1>
-          <p className={cn("text-xl", colors.textSecondary)}>
+          <p className={cn("text-sm sm:text-xl", colors.textSecondary)}>
             Master the memory deck in groups of 13
           </p>
         </div>
 
         {/* Controls */}
-        <div className="mb-8">
+        <div className="mb-4 sm:mb-8">
           <Controls
             selectedGroups={selectedGroups}
             onGroupToggle={handleGroupToggle}
@@ -178,7 +178,7 @@ function App() {
         </div>
 
         {/* Flashcard */}
-        <div className="mb-6">
+        <div className="mb-3 sm:mb-6">
           <Flashcard
             card={currentCard}
             isFlipped={isFlipped}
@@ -189,11 +189,11 @@ function App() {
         </div>
 
         {/* Action Buttons - Shuffle */}
-        <div className="flex justify-center gap-3 mb-8">
+        <div className="flex justify-center gap-3 mb-4 sm:mb-8">
           <button
             onClick={handleShuffle}
             className={cn(
-              "p-3 rounded-lg border-2 cursor-pointer",
+              "p-2 sm:p-3 rounded-lg border-2 cursor-pointer",
               colors.borderPrimary,
               isShuffled ? cn(colors.bgPrimary) : cn(colors.bgSecondary)
             )}
@@ -202,13 +202,13 @@ function App() {
             <img
               src={shuffleIcon}
               alt="Shuffle"
-              className={cn("w-6 h-6", isShuffled ? "brightness-0 invert" : "brightness-0")}
+              className={cn("w-5 h-5 sm:w-6 sm:h-6", isShuffled ? "brightness-0 invert" : "brightness-0")}
             />
           </button>
         </div>
 
         {/* Navigation */}
-        <div className="mb-8">
+        <div className="mb-4 sm:mb-8">
           <Navigation
             onPrev={handlePrev}
             onNext={handleNext}
@@ -222,7 +222,7 @@ function App() {
         <Progress current={currentIndex + 1} total={cards.length} theme={theme} />
 
         {/* Footer */}
-        <div className={cn("mt-8 text-center text-xs", colors.textSecondary)}>
+        <div className={cn("mt-4 sm:mt-8 text-center text-[10px] sm:text-xs", colors.textSecondary)}>
           <p>
             Developed by{' '}
             <a

@@ -79,29 +79,29 @@ const Flashcard = ({ card, isFlipped, onFlip, mode, theme }) => {
   return (
     <div className="flex flex-col items-center">
       {/* Info Display Above Card */}
-      <div className="mb-8 text-center h-[140px] flex flex-col">
+      <div className="mb-4 sm:mb-8 text-center h-[80px] sm:h-[140px] flex flex-col">
         {/* Show position based on mode */}
         <div
-          className={`mb-2 transition-opacity duration-300 ${
+          className={`mb-1 sm:mb-2 transition-opacity duration-300 ${
             showPosition ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div className={`text-xs font-bold ${colors.textSecondary}/70 mb-2 uppercase tracking-widest`}>
+          <div className={`text-[10px] sm:text-xs font-bold ${colors.textSecondary}/70 mb-1 sm:mb-2 uppercase tracking-widest`}>
             Position
           </div>
-          <div className={`text-7xl font-extrabold ${colors.textPrimary}`} style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
+          <div className={`text-4xl sm:text-7xl font-extrabold ${colors.textPrimary}`} style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
             {card.num}
           </div>
         </div>
 
         {/* Show card name only when card face is visible and animation is complete */}
         <div
-          className={`mt-3 transition-opacity duration-300 ${
+          className={`mt-1 sm:mt-3 transition-opacity duration-300 ${
             showName ? 'opacity-100' : 'opacity-0'
           }`}
         >
           {showCardFront && (
-            <div className={`text-2xl font-bold ${colors.textPrimary}`} style={{ fontFamily: 'Georgia, serif' }}>
+            <div className={`text-base sm:text-2xl font-bold ${colors.textPrimary}`} style={{ fontFamily: 'Georgia, serif' }}>
               {card.value} of {card.suit}
             </div>
           )}
@@ -111,8 +111,7 @@ const Flashcard = ({ card, isFlipped, onFlip, mode, theme }) => {
       {/* Playing Card with Flip Animation */}
       <div
         onClick={onFlip}
-        className="relative cursor-pointer perspective-1000"
-        style={{ width: '300px', height: '420px' }}
+        className="relative cursor-pointer perspective-1000 w-[200px] h-[280px] sm:w-[300px] sm:h-[420px]"
       >
         <div
           className={`relative w-full h-full transition-transform duration-600 transform-style-3d ${
@@ -144,7 +143,7 @@ const Flashcard = ({ card, isFlipped, onFlip, mode, theme }) => {
       </div>
 
       {/* Tap to flip hint */}
-      <div className={`text-center mt-6 text-sm ${colors.textSecondary} italic`}>
+      <div className={`text-center mt-3 sm:mt-6 text-xs sm:text-sm ${colors.textSecondary} italic`}>
         Click card to flip
       </div>
     </div>

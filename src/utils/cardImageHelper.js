@@ -23,7 +23,12 @@ export const getCardImage = (card) => {
   };
 
   const fileValue = valueMap[value];
-  const filename = `${fileValue}_of_${cardSuit}.png`;
+
+  // Use "2" version for face cards (Jack, Queen, King)
+  const isFaceCard = value === 'Jack' || value === 'Queen' || value === 'King';
+  const filename = isFaceCard
+    ? `${fileValue}_of_${cardSuit}2.png`
+    : `${fileValue}_of_${cardSuit}.png`;
 
   // Return the import path for Vite
   return new URL(`../assets/card-images/${filename}`, import.meta.url).href;
